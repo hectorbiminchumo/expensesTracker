@@ -12,6 +12,7 @@ const ExpenseForm = (props) => {
         enteredDate: ''
     }
     const [userInput, setUserInput] = useState(userInputInitialState);
+  
 
     const titleChangeHandler = (event) => {
         setUserInput((prevState) =>{
@@ -65,9 +66,10 @@ console.log(userInput);
             </div>
         </div>
         <div className="new-expense__actions">
-            <button type="submit">Add Expense</button>
+            <button onClick={props.onCancel}>Cancel</button>
+            <button type="submit" >Add Expense</button>
         </div>
     </form>
-};
+}
 
 export default ExpenseForm;
